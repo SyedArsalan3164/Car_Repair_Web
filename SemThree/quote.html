@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Quote - CarGuarantee</title>
+  <meta name="title" content="Get a Quote - CarGuarantee">
+  <meta name="description" content="Request a free quote for our auto maintenance and repair services.">
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .quote-section {
+      padding-block: 60px;
+      background-color: #0d121c;
+    }
+
+    .quote-content {
+      margin-bottom: 40px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .quote-content .section-title {
+      color: #ffffff;
+    }
+
+    .quote-content .section-text {
+      color: #cccccc;
+      max-width: 600px;
+      margin-inline: auto;
+    }
+
+    .quote-form {
+      display: grid;
+      gap: 20px;
+      max-width: 800px;
+      margin-inline: auto;
+    }
+
+    .quote-form .input-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .quote-form .input-field {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      padding: 15px 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .quote-form .input-field::placeholder {
+      color: #889097;
+    }
+
+    .quote-form .input-field:focus {
+      border-color: #d17d2f;
+    }
+
+    .quote-form select.input-field {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23889097' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      background-size: 20px;
+      padding-right: 40px;
+    }
+
+    .quote-form select.input-field option {
+      background-color: #1a222f;
+      color: #ffffff;
+    }
+
+    .quote-form textarea.input-field {
+      resize: vertical;
+      min-height: 120px;
+      font-family: inherit;
+    }
+
+    .quote-form .btn {
+      margin-inline: auto;
+    }
+
+    @media (min-width: 768px) {
+      .quote-form .input-wrapper {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="./assets/images/logo.png" width="128" height="63" alt="CarGuarantee home">
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <section class="quote-section section">
+        <div class="container">
+
+          <div class="quote-content">
+            <h2 class="h2 section-title">Request a Free Quote</h2>
+            <p class="section-text">
+              Fill out the form below to get an estimate for your vehicle's service. We'll get back to you as soon as
+              possible.
+            </p>
+          </div>
+
+          <form action="" class="quote-form">
+
+            <div class="input-wrapper">
+              <input type="text" name="name" required placeholder="Your Full Name" class="input-field">
+              <input type="email" name="email" required placeholder="Your Email Address" class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <input type="text" name="vehicle-make" required placeholder="Vehicle Make (e.g., Toyota)"
+                class="input-field">
+              <input type="text" name="vehicle-model" required placeholder="Vehicle Model (e.g., Camry)"
+                class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <select name="service-type" class="input-field">
+                <option value="" selected disabled>Select Service Type</option>
+                <option value="engine-repair">Engine Repair</option>
+                <option value="brake-repair">Brake Repair</option>
+                <option value="tire-repair">Tire Repair</option>
+                <option value="battery-repair">Battery Repair</option>
+                <option value="steering-repair">Steering Repair</option>
+                <option value="other">Other</option>
+              </select>
+              <input type="number" name="vehicle-year" required placeholder="Vehicle Year (e.g., 2020)"
+                class="input-field" min="1900" max="2026">
+            </div>
+
+            <textarea name="message" required placeholder="Briefly describe the issue with your vehicle..."
+              class="input-field"></textarea>
+
+            <button type="submit" class="btn btn-primary">
+              <span class="span">Submit Request</span>
+              <span class="material-symbols-rounded">arrow_forward</span>
+            </button>
+
+          </form>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+
+    <div class="footer-top section">
+      <div class="container">
+
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="./assets/images/logo.png" width="128" height="63" alt="autofix home">
+          </a>
+          <p class="footer-text">contact for more details</p>
+          <ul class="social-list">
+            <li>
+              <a href="https://www.instagram.com/syed_arsalan31/" target="_blank" class="social-link">
+                <img src="./assets/images/instagram.svg" alt="instagram">
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/SyedArsalan3164" target="_blank" class="social-link">
+                <img src="./assets/images/twitter.svg" alt="twitter">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="footer-list">
+          <li>
+            <p class="h3">Opening Hours</p>
+          </li>
+          <li>
+            <p class="p">Monday – Saturday</p>
+            <span class="span">09.00 – 10.00</span>
+          </li>
+          <li>
+            <p class="p">Sunday – Closed</p>
+          </li>
+        </ul>
+
+        <section id="arcontact">
+          <ul class="footer-list">
+            <li>
+              <p class="h3">Contact Info</p>
+            </li>
+            <li>
+              <a href="tel:9876543210" class="footer-link">
+                <span class="material-symbols-rounded">call</span>
+                <span class="span">9876543210</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:user@gmail.com" class="footer-link">
+                <span class="material-symbols-rounded">mail</span>
+                <span class="span">user@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <address class="footer-link address">
+                <span class="material-symbols-rounded">location_on</span>
+                <span class="span">Rajkot, Gujarat, 360003</span>
+              </address>
+            </li>
+          </ul>
+        </section>
+
+      </div>
+      <img src="./assets/images/footer-shape-3.png" width="637" height="173" loading="lazy" alt="Shape"
+        class="shape shape-3 move-anim">
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">&copy; 2025, USER All Rights Reserved.</p>
+      </div>
+    </div>
+
+  </footer>
+
+  <script>
+
+    const quoteForm = document.querySelector(".quote-form");
+
+
+    quoteForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      
+
+      alert("Your request has been submitted successfully! We'll get back to you soon.");
+      
+      quoteForm.reset();
+    });
+  </script>
+
+</body>
+
+</html>

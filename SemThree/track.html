@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Track Your Service - CarGuarantee</title>
+  <meta name="title" content="Track Your Service - CarGuarantee">
+  <meta name="description" content="Track your car maintenance and repair status with CarGuarantee. Made by Syed Arsalan">
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+   
+    body {
+      background-color: #0d1117;
+      color: #f5f5f5;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .section {
+      background-color: #0d1117;
+    }
+
+    .section-title {
+      color: #ffcc00;
+    }
+
+    .section-text {
+      color: #ddd;
+    }
+
+    .track-form-box {
+      background-color: #161b22;
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      background-color: #21262d;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .form-control::placeholder {
+      color: #aaa;
+    }
+
+    .btn-primary {
+      background-color: #ffcc00;
+      color: #000;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 28px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #e6b800;
+    }
+
+    .status-result {
+      background-color: #e6b800;
+      border-radius: 10px;
+      padding: 25px;
+      margin-top: 25px;
+      display: none;
+    }
+
+    .service-card {
+      background-color: #161b22;
+      border-radius: 15px;
+      padding: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      background-color: #1c222a;
+      transform: translateY(-5px);
+    }
+
+    .card-title {
+      color: #ffcc00;
+    }
+
+    .navbar-link.active {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <header class="header">
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/logo.png" width="128" height="63" alt="CarGuarantee Home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li><a href="/car.html" class="navbar-link">Home</a></li>
+          <li><a href="/car.html#service-label" class="navbar-link">Services</a></li>
+          <li><a href="/track.html" class="navbar-link active">Track Your Service</a></li>
+          <li><a href="/car.html#arcontact" class="navbar-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="quote.html" class="btn btn-primary">
+        <span class="span">Get a Quote</span>
+        <span class="material-symbols-rounded">arrow_forward</span>
+      </a>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <section class="section" aria-labelledby="track-label">
+        <div class="container" style="text-align:center;">
+
+          <p class="section-subtitle" id="track-label">Track Your Service</p>
+          <h2 class="h2 section-title">Check Your Vehicle’s Service Status</h2>
+          <p class="section-text">Enter your Service ID or Mobile Number below to get real-time updates.</p>
+
+          <div class="track-form-box">
+            <form id="trackForm" onsubmit="return showStatus(event)">
+              <input type="text" id="trackInput" name="trackInput" class="form-control"
+                placeholder="e.g., SRV10234 or 9876543210" required>
+              <button type="submit" class="btn btn-primary">
+                <span class="span">Track Now</span>
+                <span class="material-symbols-rounded">search</span>
+              </button>
+            </form>
+
+            <div id="statusResult" class="status-result">
+              <h3 class="h3">Service Status</h3>
+              <p id="statusText">Fetching details...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="section" aria-labelledby="how-label">
+        <div class="container">
+
+          <p class="section-subtitle" id="how-label">How It Works</p>
+          <h2 class="h2 section-title">Track Your Car in 3 Simple Steps</h2>
+
+          <ul class="service-list">
+            <li>
+              <div class="service-card">
+                <figure class="card-icon">
+                  <img src="./assets/images/services-1.png" width="110" height="110" alt="Step 1">
+                </figure>
+                <h3 class="h3 card-title">1. Enter Service ID</h3>
+                <p class="card-text">Provide your Service ID or registered mobile number in the above form.</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+                <figure class="card-icon">
+                  <img src="./assets/images/services-2.png" width="110" height="110" alt="Step 2">
+                </figure>
+                <h3 class="h3 card-title">2. Check Status</h3>
+                <p class="card-text">Instantly see the current status of your car’s service progress.</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+                <figure class="card-icon">
+                  <img src="./assets/images/services-3.png" width="110" height="110" alt="Step 3">
+                </figure>
+                <h3 class="h3 card-title">3. Get Updates</h3>
+                <p class="card-text">Stay informed about when your car is ready for pickup or delivery.</p>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+
+    <div class="footer-top section">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo.png" width="128" height="63" alt="CarGuarantee Home">
+          </a>
+
+          <p class="footer-text">
+            Track and manage your car maintenance and repair services online.
+          </p>
+
+          <ul class="social-list">
+            <li>
+              <a href="https://www.instagram.com/" target="_blank" class="social-link">
+                <img src="./assets/images/instagram.svg" alt="instagram">
+              </a>
+            </li>
+
+            <li>
+              <a href="https://x.com/" target="_blank" class="social-link">
+                <img src="./assets/images/" alt="twitter">
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+        <ul class="footer-list">
+          <li><p class="h3">Contact Info</p></li>
+          <li><a href="tel:9876543210" class="footer-link">
+              <span class="material-symbols-rounded">call</span>
+              <span class="span">9876543210</span>
+            </a></li>
+          <li><a href="mailto:user@gmail.com" class="footer-link">
+              <span class="material-symbols-rounded">mail</span>
+              <span class="span">user@gmail.com</span>
+            </a></li>
+          <li><address class="footer-link address">
+              <span class="material-symbols-rounded">location_on</span>
+              <span class="span">Rajkot, Gujarat, 360003</span>
+            </address></li>
+        </ul>
+
+      </div>
+
+      <img src="./assets/images/footer-shape-3.png" width="637" height="173" loading="lazy" alt="Shape"
+        class="shape shape-3 move-anim">
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">&copy; 2025, USER All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function showStatus(event) {
+      event.preventDefault();
+      const input = document.getElementById("trackInput").value.trim();
+      const statusResult = document.getElementById("statusResult");
+      const statusText = document.getElementById("statusText");
+
+      let status;
+      if (input === "GJ01AB1234") {
+        status = "✅ Your car service is complete. Ready for pickup!";
+      } else if (input === "9876543210") {
+        status = "🔧 Your car is currently under inspection. Estimated completion: 2 hours.";
+      } else if (input === "SRV10200") {
+        status = "🧽 Vehicle cleaning in progress. Ready soon!";
+      } else {
+        status = "❌ No record found. Please verify your Service ID or contact support.";
+      }
+
+      statusResult.style.display = "block";
+      statusText.textContent = status;
+    }
+  </script>
+
+</body>
+</html>

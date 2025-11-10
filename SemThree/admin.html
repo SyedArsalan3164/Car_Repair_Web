@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - CarGuarantee</title>
+  <meta name="description" content="Admin login page for CarGuarantee service management">
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,600,0,0" />
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('./assets/images/service-bg.jpg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      width: 350px;
+      text-align: center;
+    }
+
+    .login-container h1 {
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: #222;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .input-group label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .input-group input:focus {
+      border-color: #ff4d30;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff4d30;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-login:hover {
+      background-color: #e03e1e;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 15px;
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-container">
+    <h1>Admin Login</h1>
+    <p class="error-message" id="error-message">Invalid username or password!</p>
+
+    <form id="loginForm" onsubmit="return validateLogin(event)">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter admin username" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required>
+      </div>
+
+      <button type="submit" class="btn-login">Login</button>
+      <a href="index.html" class="back-link">← Back to Home</a>
+    </form>
+  </div>
+
+  <script>
+    
+    function validateLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const error = document.getElementById('error-message');
+
+      
+      const adminUser = "User";
+      const adminPass = "User123";
+
+      if (username === adminUser && password === adminPass) {
+        alert("Login Successful! Redirecting to Admin Dashboard...");
+        window.location.href = "dashboard.html";
+      } else {
+        error.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+
+</html>
